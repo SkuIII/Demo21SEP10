@@ -63,7 +63,7 @@ namespace Demo1
                 if (alternativ != "1" && alternativ != "2" && alternativ != "3" && alternativ != "4")
                 {
                     Console.Clear();
-                    Console.WriteLine("Du måste skriva ett av alternativen 1, 2, 3 eller 4!");
+                    Console.WriteLine("Du är dum i huvudet, skriv ett av alternativen 1, 2, 3 eller 4!");
                 }
 
                 // Gör så att man får lite rum att andas och läsa vad som händer innan alternativen postas igen
