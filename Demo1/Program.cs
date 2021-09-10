@@ -27,7 +27,7 @@ namespace Demo1
                     Console.WriteLine("Mata in kundens nummer:");
                     string customerNumber = Console.ReadLine();
 
-                    myCustomers.Add(new Customer() { Name = customerName, Adress = customerAdress, Number = customerName });
+                    myCustomers.Add(new Customer() { Name = customerName, Adress = customerAdress, Number = customerNumber });
 
                     Console.Clear();
                     Console.WriteLine($"Ny kund \"{customerName}\" har skapats!");
@@ -42,7 +42,14 @@ namespace Demo1
 
                 if (alternativ == "3") // Visa lista över alla kunder
                 {
-                    Console.WriteLine("3");
+                    Console.Clear();
+
+                    foreach (Customer c in myCustomers)
+                    {
+                        Console.WriteLine($"Namn: {c.Name}\n" +
+                                          $"Adress: {c.Adress}\n" +
+                                          $"Nummer: {c.Number}\n");
+                    }
                 }
 
                 if (alternativ == "4") // Avsluta
@@ -55,6 +62,8 @@ namespace Demo1
                     Console.Clear();
                     Console.WriteLine("Du måste skriva ett av alternativen 1, 2, 3 eller 4!");
                 }
+
+                Console.ReadLine();
             }
         }
     }
