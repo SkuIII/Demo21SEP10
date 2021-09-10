@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Demo1
 {
@@ -6,11 +7,12 @@ namespace Demo1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Välkommen! Välj vad du vill göra med hjälp av alternativen nedan:");
+            List<Customer> myCustomers = new List<Customer>();
 
             while (true)
             {
-                Console.WriteLine("1 (Skapa ny kund)\n" +
+                Console.WriteLine("Välj vad du vill göra med hjälp av alternativen nedan:\n" +
+                                  "1 (Skapa ny kund)\n" +
                                   "2 (Visa antal kunder)\n" +
                                   "3 (Visa lista över alla kunder)\n" +
                                   "4 (Avsluta)");
@@ -18,20 +20,27 @@ namespace Demo1
 
                 if (alternativ == "1") // Skapa kund
                 {
-                    Console.WriteLine("1");
-                    break;
+                    Console.WriteLine("Mata in kundens namn:");
+                    string customerName = Console.ReadLine();
+                    Console.WriteLine("Mata in kundens adress:");
+                    string customerAdress = Console.ReadLine();
+                    Console.WriteLine("Mata in kundens nummer:");
+                    string customerNumber = Console.ReadLine();
+
+                    myCustomers.Add(new Customer() { Name = customerName, Adress = customerAdress, Number = customerName });
+
+                    Console.Clear();
+                    Console.WriteLine($"Ny kund \"{customerName}\" har skapats!");
                 }
 
                 if (alternativ == "2") // Visa antal kunder
                 {
                     Console.WriteLine("2");
-                    break;
                 }
 
                 if (alternativ == "3") // Visa lista över alla kunder
                 {
                     Console.WriteLine("3");
-                    break;
                 }
 
                 if (alternativ == "4") // Avsluta
@@ -39,14 +48,18 @@ namespace Demo1
                     break;
                 }
 
-                Console.WriteLine("Du måste skriva ett av alternativen nedan! Antingen 1, 2, 3 eller 4.");
+                if (alternativ != "1" && alternativ != "2" && alternativ != "3" && alternativ != "4")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Du måste skriva ett av alternativen 1, 2, 3 eller 4!");
+                }
             }
         }
     }
     class Customer
     {
-        public string name;
-        public string adress;
-        public string number;
+        public string Name;
+        public string Adress;
+        public string Number;
     }
 }
