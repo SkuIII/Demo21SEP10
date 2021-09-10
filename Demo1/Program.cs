@@ -16,25 +16,25 @@ namespace Demo1
                                   "4 (Avsluta)");
                 string alternativ = Console.ReadLine();
 
-                if (alternativ == "1")
+                if (alternativ == "1") // Skapa kund
                 {
                     Console.WriteLine("1");
                     break;
                 }
 
-                if (alternativ == "2")
+                if (alternativ == "2") // Visa antal kunder
                 {
                     Console.WriteLine("2");
                     break;
                 }
 
-                if (alternativ == "3")
+                if (alternativ == "3") // Visa lista över alla kunder
                 {
                     Console.WriteLine("3");
                     break;
                 }
 
-                if (alternativ == "4")
+                if (alternativ == "4") // Avsluta
                 {
                     break;
                 }
