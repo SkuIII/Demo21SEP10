@@ -35,7 +35,9 @@ namespace Demo1
 
                 if (alternativ == "2") // Visa antal kunder
                 {
-                    Console.WriteLine("2");
+                    Console.Clear();
+                    Console.WriteLine($"Det finns just nu {myCustomers.Count} kunder i systemet, " +
+                                       "för att se en lista över alla kunder välj alternativ 3.");
                 }
 
                 if (alternativ == "3") // Visa lista över alla kunder
